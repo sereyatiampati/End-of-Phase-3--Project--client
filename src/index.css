@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,41 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.contact-title{
+  text-align: center;
+  padding-top: 9rem;
+  margin-bottom: 0;
+  font-size: 5rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+.p-contact{
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  word-spacing: 2px;
+  font-size: 1.2rem;
+}
+#home-firstDiv{
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+#first-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: -5px;
+  width: 50vw;
+  height: 100px;
+  padding: 150px 0 0 150px;
+
+}
+#first-title span{
+  color: rgba(0, 0, 0, 0.39);
+}
+#second-divImg{
+  padding-left: 90px;
 }
