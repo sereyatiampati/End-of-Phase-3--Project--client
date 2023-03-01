@@ -3,13 +3,13 @@ export const PRODUCTS = [
   {
     id: 1,
     productName: "Lux White and Teal Lamp Shade",
-    price: 999.0,
+    price: 499.0,
     productImage: "https://media.istockphoto.com/id/1270753183/photo/table-lamp-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=kg5jUP0ZLsn7k6DC2orrADuGKJFFv18so5H_AiPH2Lk=",
   },
   {
     id: 8,
     productName: "Mid-Century Cosy Wingback ArmChair",
-    price: 599.0,
+    price: 999.0,
     productImage: "https://media.istockphoto.com/id/1321320075/photo/3d-rendering-of-an-isolated-modern-pale-green-mid-century-cosy-lounge-wingback-armchair.jpg?b=1&s=170667a&w=0&k=20&c=DnhYZHHNh09-MtUA3vLrpV3zqhgJPU1vjOgeRREjsls=",
   },
   {
@@ -38,8 +38,8 @@ export const PRODUCTS = [
   },
   {
     id: 7,
-    productName: "Equipments Weight-Lifting",
-    price: 120.0,
+    productName: "Soft Pillows & Blankets -6pcs",
+    price: 249.0,
     productImage: "https://media.istockphoto.com/id/1318862189/photo/stylish-soft-pillows-and-blankets-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=ipolDFo7N-z6qNV_sEY4cHKAbBWgM4gZ9CUxJzQgGGM=",
   },
   {

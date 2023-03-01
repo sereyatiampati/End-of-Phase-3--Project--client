@@ -49,3 +49,19 @@ code {
 #second-divImg{
   padding-left: 90px;
 }
+.title-reviews{
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding-top: 15px;
+}
+.total-reviews{
+  text-align: center;
+}
+button:hover{
+ border: none;
+}
+button:focus{
+  outline: none;
+ }
+@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }

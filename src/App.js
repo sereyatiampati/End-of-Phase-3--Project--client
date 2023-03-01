@@ -7,6 +7,7 @@ import { Cart } from "./pages/cart/cart";
 import { ShopContextProvider } from "./context/shop-context";
 import "./index.css"
 import Services from "./Services"
+import Reviews from "./Reviews";
 import { Home } from "./Home";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Shop />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/reviews" element={<Reviews />} />
           </Routes>
         </Router>
       </ShopContextProvider>
