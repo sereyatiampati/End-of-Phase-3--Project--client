@@ -1,9 +1,11 @@
 import { React, useState, useEffect } from "react";
 import Review from "./Review"
+import AddReviewForm from "./AddReviewForm";
 
 function Reviews () {
 
    const [reviews, setReviews]=useState([]);
+   const [showAddForm, setshowAddForm]=useState(false)
 
    const url="http://localhost:9292/reviews"
 
@@ -11,7 +13,7 @@ function Reviews () {
     fetch(url)
     .then(res => res.json())
     .then(data=>setReviews(data))
-  }, [])
+  }, [reviews])
 
   function handleDeleteClick(id){
     fetch(`${url}/${id}`, {
@@ -24,6 +26,10 @@ function Reviews () {
     return <Review key={index} review={review} onDeleteClick={handleDeleteClick}/>
   })
   if (!reviews) return <h2>Loading reviews...</h2>;
+
+  function handleAddReview(newReview){
+    setReviews([...reviews, newReview])
+  }
     return (
     <>
         <section style={{backgroundColor: "#eee"}}>
@@ -36,7 +42,10 @@ function Reviews () {
               <i className="fa fa-star"></i>
               <span className="total-reviews"> {reviews.length}</span>
             </div>
-            <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white", float: "right", marginRight: "230px", padding: "6px"}}>WRITE A REVIEW</button>
+            <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white", float: "right", marginRight: "230px", padding: "6px"}} onClick={()=> setshowAddForm(!showAddForm)}>WRITE A REVIEW</button>
+            {
+              showAddForm ? <AddReviewForm onAddReview={handleAddReview}/> : null
+            }
                 <div class="container py-5">
                     {allReviews}
                 </div>

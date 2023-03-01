@@ -17,7 +17,7 @@ function Review({review,onDeleteClick}) {
               <div class="row">
                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                   <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                    <img src={product.productImage}
+                    <img src={product.productImage} alt={product.productName}
                       class="w-100" />
                     <a href="#!">
                       <div class="hover-overlay">
@@ -27,7 +27,7 @@ function Review({review,onDeleteClick}) {
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6">
-                  <h5 style={{color: "teal", fontSize: "16px"}}>Anonymous</h5>
+                  <h5 style={{color: "teal", fontSize: "12px"}}>Review for {product.productName} </h5>
                   <div class="d-flex flex-row">
                     <div class="text-warning mb-1 me-2">
                         {stars}
@@ -46,15 +46,12 @@ function Review({review,onDeleteClick}) {
                 </div>
                 <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                   <div class="d-flex flex-row align-items-center mb-1">
-                    {/* <h4 class="mb-1 me-1">$13.99</h4>
-                    <span class="text-danger"><s>$20.99</s></span> */}
                   </div>
-                  {/* <h6 class="text-success">Free shipping</h6> */}
                   <div class="d-flex flex-column mt-4">
                     <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white"}} onClick={handleDeleteClick}>Delete</button>
-                    <button class="btn btn-outline btn-sm mt-2" type="button" style={{backgroundColor: "teal", color: "white"}}>
+                    {/* <button class="btn btn-outline btn-sm mt-2" type="button" style={{backgroundColor: "teal", color: "white"}}>
                       Edit comment
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
