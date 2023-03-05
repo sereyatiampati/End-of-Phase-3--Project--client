@@ -1,9 +1,9 @@
-import { React, useState} from "react";
+import { React, useState, useEffect} from "react";
 
 function AddReviewForm({onAddReview}) {
     const [formData, setFormData] = useState({
-        star_rating: "",
-        product_id: "",
+        star_rating: "default",
+        product_id: "default",
         title: "",
         comment: ""}
         )
@@ -29,35 +29,39 @@ function AddReviewForm({onAddReview}) {
    
             setFormData({
                 star_rating: "",
-                product_id: "",
+                product_id: "default",
                 title: "",
                 comment: ""
             })
           }
+        
+        const [products, setProducts]=useState([])
+        const url="http://localhost:9292/products"
+      
+          useEffect(()=> {
+           fetch(url)
+           .then(res => res.json())
+           .then(data=>setProducts(data))
+         }, [products])
+        const productList= products.map((product,index)=> {
+          
+         return <option key={index} value={index+1}>{product.productName}</option>})
+      
 
     return(
-<form style={{margin: "40px 300px 0 300px"}} onSubmit={handleSubmit}>
+<form style={{margin: "40px 300px 20px 300px"}} onSubmit={handleSubmit}>
     <p><span style={{color: "red", fontSize: "10px"}}>*</span>indicates a required field</p>
     <div class="form-group">
     <label for="exampleFormControlSelect1"><span style={{color: "red"}}>*</span> Product to review</label>
-    <select class="form-control" id="exampleFormControlSelect1" name="product_id" onChange={handleChange} placeholder="Select a value">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
+    <select class="form-control" id="exampleFormControlSelect1" name="product_id" onChange={handleChange} defaultValue={formData.product_id}>
+    <option disabled value="default" hidden>Select a product you want to review...</option>
+      {productList}
     </select>
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1"><span style={{color: "red"}}>*</span> Rating</label>
-    <select class="form-control" id="exampleFormControlSelect1" name="star_rating" onChange={handleChange} placeholder="Select a value">
+    <select class="form-control" id="exampleFormControlSelect1" name="star_rating" onChange={handleChange} defaultValue={formData.star_rating}>
+      <option hidden disabled value="default">Rate the product</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -73,7 +77,7 @@ function AddReviewForm({onAddReview}) {
     <label for="exampleFormControlTextarea1"><span style={{color: "red"}}>*</span> Comment</label>
     <textarea placeholder="Leave us a comment.." class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment" value={formData.comment} onChange={handleChange}></textarea>
   </div>
- <button class="btn btn-outline btn-sm mt-2" type="submit" style={{backgroundColor: "teal", color: "white"}}>
+ <button class="btn btn-outline btn-sm mt-2" type="submit" style={{backgroundColor: "teal", color: "white", marginLeft:"400px"}}>
     Submit Review
 </button>
 </form>

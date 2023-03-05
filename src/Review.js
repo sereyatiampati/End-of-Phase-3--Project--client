@@ -16,7 +16,7 @@ function Review({review,onDeleteClick}) {
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <div class="sm-image hover-zoom ripple rounded ripple-surface">
                     <img src={product.productImage} alt={product.productName}
                       class="w-100" />
                     <a href="#!">
@@ -47,12 +47,12 @@ function Review({review,onDeleteClick}) {
                 <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                   <div class="d-flex flex-row align-items-center mb-1">
                   </div>
-                  <div class="d-flex flex-column mt-4">
+                    <div class="d-flex flex-column mt-4">
                     <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white"}} onClick={handleDeleteClick}>Delete</button>
                     {/* <button class="btn btn-outline btn-sm mt-2" type="button" style={{backgroundColor: "teal", color: "white"}}>
                       Edit comment
                     </button> */}
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>

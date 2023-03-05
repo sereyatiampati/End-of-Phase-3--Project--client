@@ -45,7 +45,7 @@ export const PRODUCTS = [
   {
     id: 8,
     productName: "Tambour Dining Set – Black",
-    price: 599.0,
+    price: 4999.0,
     productImage: "https://www.royalfurniture.ae/wp-content/uploads/2023/01/999x665-2.jpg",
   },
   {

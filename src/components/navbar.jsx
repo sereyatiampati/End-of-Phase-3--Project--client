@@ -16,13 +16,16 @@ export const Navbar = () => {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
+        <NavLink to="/" activeClassName="active"> Login </NavLink>
+        </li>
+        <li class="nav-item">
         <NavLink to="/home" activeClassName="active"> Home </NavLink>
         </li>
         <li class="nav-item">
         <NavLink to="/services" activeClassName="active"> Services </NavLink>
         </li>
         <li class="nav-item">
-        <NavLink to="/" activeClassName="active"> Shop  </NavLink>
+        <NavLink to="/shop" activeClassName="active"> Shop  </NavLink>
         </li>
         <li class="nav-item">
         <NavLink to="/cart" activeClassName="active">

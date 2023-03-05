@@ -6,6 +6,7 @@ function Reviews () {
 
    const [reviews, setReviews]=useState([]);
    const [showAddForm, setshowAddForm]=useState(false)
+   
 
    const url="http://localhost:9292/reviews"
 
@@ -42,10 +43,20 @@ function Reviews () {
               <i className="fa fa-star"></i>
               <span className="total-reviews"> {reviews.length}</span>
             </div>
-            <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white", float: "right", marginRight: "230px", padding: "6px"}} onClick={()=> setshowAddForm(!showAddForm)}>WRITE A REVIEW</button>
+            <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white", float: "right", marginRight: "230px", padding: "6px"}} onClick={()=> setshowAddForm(!showAddForm)}>{showAddForm===false ?  "WRITE A REVIEW" : "CANCEL REVIEW"}</button>
             {
               showAddForm ? <AddReviewForm onAddReview={handleAddReview}/> : null
             }
+            {/* <button class="btn btn btn-sm" type="button" style={{backgroundColor: "teal", color: "white", float: "left", marginLeft: "230px", padding: "6px"}}>Sort reviews</button> */}
+            <div class="dropdown">
+                <button class="btn btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{backgroundColor: "teal", color: "white", float: "left", marginLeft: "220px"}}>
+                Sort reviews
+                </button>
+                <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenu2">
+                  <button class="dropdown-item" type="button">Latest</button>
+                  <button class="dropdown-item" type="button">Oldest</button>
+                </div>
+            </div>
                 <div class="container py-5">
                     {allReviews}
                 </div>

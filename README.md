@@ -27,7 +27,6 @@ gem install
 npm start
 
 ```
-
 ## Features
 
 ### App
